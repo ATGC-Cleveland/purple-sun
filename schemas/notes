@@ -1,0 +1,36 @@
+the JSON Schema ONLY needs to concern itself with the data that will be passed in the JSON data block
+presentational elements will be conformed to the form block of the JSON Form structure
+
+behavioral economics - incentivizing behavior
+
+Name
+Birthdate
+Age
+Biological Sex
+Gender
+Address
+City
+State
+Zip
+County
+Race
+Ethnicity
+
+How to create questions that combine race and ethnicity:
+
+Most clients don't clearly understand the distinction between Race and Ethnicity.
+How do we create questions that determine the answer to both questions?
+
+Challenges:
+
+1) When African-American youth are offered the opportunity to select BOTH Black/African-American and Hispanic/Latino they have a higher tendency to select both as anecdotlly desirable racial identity (similar situations have occured when Native American is included as an option alone rather than grouped with Alaskan Native as it appears on OMB documentation)
+2) Anecdotally I would suggest that ALL youth who identify as Hispanic as an ehtnicity also would qualify as Black (however, not African-American). These youth tend to be of Afro-Latino groups (Puerto Rican, Cuban, Dominican, Bajan, etc). This seems to relegated to all Carribean cultures, except Jamaican and doesn't remotely address those of Haitian or Mexican descent - which locally is rare but could become significant if this process becomes more widely adopted. However, the interpretation by youth of this is based primarily on skin color rather than georgraphical heritage. White (race) and Hispanic (ethnicity) is Puerto Rican, Cuban, Mexican and South American nationalities. Black (race) and Hispanic (ethnicity) are Dominican and Bajan - still no connections for Jamaican or Haitian.
+3) I would continue to group all local Hispanic (ethnicity) identified youth as Black and leave White (race) Hispanic (ethnicity) to Continental Hispanic (Spanish, Porteguese and many South American cultures).
+
+Would you be able to answer these questions if they were written in Spanish?
+Would you prefer these questions to be asked in Spanish?
+
+sc_matrix
+	ethnic group (select the primary ethnic group with which you identify - combined elements of cultural heritage, national origin or identification, etc)
+	racial group (select one or more racial groups with which you identify)
+	ehtnicity keyword is extrapolated from this information
