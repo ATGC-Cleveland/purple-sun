@@ -283,3 +283,19 @@ function starkers_posted_in() {
 	);
 }
 endif;
+
+
+/* CUSTOM FUNCTIONS */
+
+
+/**
+ * Checks if dependent plugins are activated and loaded.
+ *
+ * @returns boolean
+ */
+
+function atgc_purple_dep_plugins_loaded() {
+
+	$dep_classes = array( 'TW_FormFactory' );
+	
+}
