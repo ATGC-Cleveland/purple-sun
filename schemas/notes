@@ -34,3 +34,37 @@ sc_matrix
 	ethnic group (select the primary ethnic group with which you identify - combined elements of cultural heritage, national origin or identification, etc)
 	racial group (select one or more racial groups with which you identify)
 	ehtnicity keyword is extrapolated from this information
+
+SNIPPETS
+
+$traverse_data = new RecursiveArrayIterator( $data->properties );
+		
+		foreach ( new RecursiveIteratorIterator( $traverse_data , 2 ) as $key => $value ) {
+			
+			if ( $key == '$ref' ) {
+				echo '<p style="margin: 10px;">I found a JSON ref pointer!</p>';
+			}
+			
+		}
+		
+$traverse_data = new RecursiveArrayIterator( $schema->schema->properties );
+
+var_dump( $traverse_data->key() )
+
+var_dump( $traverse_data->getChildren() );
+
+$traverse_data->next();
+
+var_dump( $traverse_data->getChildren() );
+
+//$traverse_data = new ArrayObject( $traverse_data );
+
+//$iter = new RecursiveIteratorIterator( $traverse_data );
+
+/*foreach ( $iter as $key => $value ) {
+
+	if ( $key == '$ref' ) {
+		echo '<p style="margin: 10px;">I found a JSON ref pointer!</p>';
+	}
+	
+}*/
