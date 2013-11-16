@@ -8,10 +8,30 @@
  */
 ?>
 
-<?php get_header(); ?>
+<?php //get_header(); ?>
 
 	<h1>JSON Schema Testing</h1>
 	
-
+	<?php if ( atgc_purple__dep_plugins_loaded( 'Form Factory' ) ) : ?>
+	
+	<p>Congratulations, Form Factory is successfully loaded!</p>
+	
+	<?php
+	
+		$ff = new TW_FormFactory('client');
+		
+		$ff->json_build_form();
+		
+		//$ff_json = $ff->json_load_schema('client');
+		
+		//$ff->json_locate_refs( $ff_json );
+			
+	?>
+	
+	<?php else : ?>
+	
+	<p>Bummer, Form Factory is not loaded.</p>
+	
+	<?php endif; ?>
 
 <?php get_footer(); ?>

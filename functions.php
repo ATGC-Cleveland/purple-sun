@@ -294,8 +294,11 @@ endif;
  * @returns boolean
  */
 
-function atgc_purple_dep_plugins_loaded() {
+function atgc_purple__dep_plugins_loaded( $class ) {
 
-	$dep_classes = array( 'TW_FormFactory' );
+	$dep_classes = array( 'Form Factory' => 'TW_FormFactory' );
+	
+	if ( class_exists( $dep_classes[ $class ] ) )
+		return true;
 	
 }
