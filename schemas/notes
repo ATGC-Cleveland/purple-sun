@@ -68,3 +68,79 @@ var_dump( $traverse_data->getChildren() );
 	}
 	
 }*/
+
+		if ( isset( $json_obj->schema ) ) {
+		
+			// we are at the root level of properties
+			
+			// var_dump($path);
+			
+			foreach ( $json_obj->$path[0]->$path[1] as $node => $value ) {
+				
+				if ( isset( $value->properties ) ) {
+				
+					//echo $key . ' has additional properties.<br />';
+					
+					$path[] = $node;
+					
+					$this->json_locate_refs( $value , $node , $path );
+					
+				}
+				
+				if ( isset( $value->{'$ref'} ) ) {
+				
+					//echo 'I found a JSON ref pointer in ' . $key . '.<br />';
+					
+					$ref_parsed = $this->json_parse_ref( $value->{'$ref'} );    // need to handle nodes
+					
+					array_push( $path , $node );
+					
+					//$ref_schema = $this->json_expand_ref( $ref_parsed , $path );
+					
+					//$json_obj->schema->properties->$node = $ref_schema->properties;
+					
+				}
+			}
+			
+		} else {
+		
+			foreach ( $json_obj->properties as $node => $value ) {
+			
+				//var_dump($node);
+				//var_dump($value);
+				
+				if ( isset( $value->properties ) ) {
+				
+					//echo $node . ' has additional properties.<br />';
+					
+					$path[] = $node;
+					
+					$this->json_locate_refs( $value , $node , $path );
+					
+				}
+				
+				if ( $node == '$ref' ) {
+				
+					//echo 'I found a JSON ref pointer in ' . $header . '.<br />';
+					
+				}
+				
+			}
+			
+		}
+		
+		//var_dump($schema_obj);
+
+	/**
+		 *    found a ref pointer...now need to find the file
+		 *    The file location should be a string value
+		 *    Will always be contained in the 'schemas' folder of the theme directory.
+		 *    Needs to handle uri's that are in subfolders.
+		 *    Needs to only search for external file if pointer doesn't start with #.
+		 *    RULE: ref pointer objects will be found under 'definitions' object when ref pointer starts
+		 *          with # and is located in the same document.
+		 *    RULE: All external schema URI's will be relative to the 'schema' directory.
+		 *    RULE: External schemas with multiple definitions will be references by a pointer structured as
+		 *          schema.json#definition
+		 *    TODO: Need code to handle these three different situations.
+		 */
