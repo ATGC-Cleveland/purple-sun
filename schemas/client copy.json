@@ -1,0 +1,100 @@
+{
+	"$schema" : "http://json-schema.org/draft-04/schema#",
+	"description" : "a representation of an individual receiving services",
+	"type" : "object",
+	
+	"schema" : {
+	
+		"title" : "",
+		"description" : "",
+		"type" : "object",
+		
+		"properties" : {
+		
+			"name_full" : {
+				"type" : "object",
+				"title" : "Full Name",
+				"description" : "the full name of the Client as two seperate variables",
+				
+				"properties" : {
+					"name_first" : { "type" : "string" },
+					"name_last" : { "type" : "string" }
+				}
+			},
+			
+			"dob" : {
+				"type" : "object",
+				"title" : "Date of Birth",
+				"description" : "client's birthdate",
+				
+				"properties" : {
+					"dob_month" : { "type" : "integer" , "title" : "Month" , "enum" : [ 1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10 , 11 , 12 ] },
+					"dob_day" : { "type" : "integer" , "title" : "Day" },
+					"dob_year" : { "type" : "integer" , "title" : "Year" }
+				},
+				
+				"required" : [ "dob_month" ]
+			},
+			
+			"bday" : { 
+				"type" : "string",
+				"title" : "Birthdate",
+				"description" : "alternate form of expressing and validating client's date of birth",
+				"format" : "date"
+			},
+			
+			"education" : {
+				"title" : "Education",
+				"type" : "object",
+				"properties" : {
+					"grade_school" : {
+						"title" : "Grade Schools"
+						"type" : "object",
+						"properties" : {
+							"elementary" : { "type" : "string" },
+							"middle_school" : { "type" : "string" },
+							"high_school" : { "type" : "string" }
+						}
+					},
+					"college" : { "type" : "string" }
+				}
+			},
+			
+			"sc_profile" : {
+				"type" : "object",
+				"title" : "Sociocultural Profile",
+				"description" : "Client's multi-dimensional, self-concept of their ethnicity, cultural heritage and race. Spectral intersections used to select Race/Ethnicity keywords",
+				
+				"properties" : {
+					"ethnic_group" : { "type" : "integer" , "title" : "Ethnic Group" , "description" : "Client's self-identified ethnic group" },
+					"racial_group" : { "type" : "integer" , "title" : "Racial Group" , "description" : "Client's self-identified racial group" },
+					"omb_ethnicity" : { "type" : "integer" , "title" : "OMB Ethnicity" , "description" : "System selected OMB Ethnicity Keyword based on Client response" },
+					"omb_race" : { "type" : "integer" , "title" : "OMB Race" , "description" : "System selected OMB Race Keyword based on Client response" }
+				}
+			},
+			
+			"gs_profile" : {
+				"type" : "object",
+				"title" : "Gender/Sexual Profile",
+				"description" : "Client's multi-dimensional, self-concept of their gender and sexual orientation. Spectral intersections used to determine Gender/Sexual keywords (i.e. Gay/MSM, Lesbian, Transgender, Cisgendered, etc)",
+				
+				"properties" : {
+					"bio_sex" : { "type" : "string" , "title" : "Biological Sex" , "description" : "the assigned sex of the Client of birth" , "enum" : [ "M" , "F" , "I" ] },
+					"gender_id" : { "type" : "string" , "title" : "Gender Identity" , "description" : "the currently identified gender of the Client" , "enum" : [ 1 , 2 , 3 , 4 , 5 ] },
+					"gender_exp" : { "type" : "string" , "title" : "Gender Expression" , "description" : "Client's currently identified outward expression of their gender" , "enum" : [ 1 , 2, 3, 4 , 5 , 6 ] },
+					"sexual_orientation" : { "type" : "string" , "title" : "Sexual Orientation" }
+				}
+			},
+			
+			"address" : {
+				"$ref" : "address"
+			}
+			
+		},
+		
+		"required" : [ "name_full" ]
+		
+	},
+	
+	"form" : []
+}
