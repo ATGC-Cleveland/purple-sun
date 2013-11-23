@@ -20,7 +20,7 @@
 	
 		$ff = new TW_FormFactory('client');
 		
-		$ff->json_build_form();
+		$ff->jsonTestSchemaExpansion();
 		
 		//$ff_json = $ff->json_load_schema('client');
 		
