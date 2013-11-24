@@ -18,25 +18,11 @@
 	
 		<p>Congratulations, Form Factory is successfully loaded!</p>
 	
-	<?php
-	
-		$ff = new TW_FormFactory('client');
-		
-		$json = $ff->jsonTestSchemaExpansion();
-		
-		//var_dump($json);
-		
-		//$ff_json = $ff->json_load_schema('client');
-		
-		//$ff->json_locate_refs( $ff_json );
-			
-	?>
-	
 	<h2>Testing JSON Extended class functions</h2>
 	
 	<?php
 	
-		$json_extended = new TW_JsonExtended( $json );
+		$json_extended = new TW_JsonExtended( 'client2' );
 		
 		$json_extended->iterate();
 	
