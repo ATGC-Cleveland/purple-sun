@@ -5,7 +5,6 @@
 	
 	"schema" : {
 	
-		"title" : "",
 		"description" : "",
 		"type" : "object",
 		
@@ -43,23 +42,6 @@
 				"format" : "date"
 			},
 			
-			"education" : {
-				"title" : "Education",
-				"type" : "object",
-				"properties" : {
-					"grade_school" : {
-						"title" : "Grade Schools"
-						"type" : "object",
-						"properties" : {
-							"elementary" : { "type" : "string" },
-							"middle_school" : { "type" : "string" },
-							"high_school" : { "type" : "string" }
-						}
-					},
-					"college" : { "type" : "string" }
-				}
-			},
-			
 			"sc_profile" : {
 				"type" : "object",
 				"title" : "Sociocultural Profile",
@@ -91,6 +73,8 @@
 			}
 			
 		},
+		
+		"title" : "JSON Schema",
 		
 		"required" : [ "name_full" ]
 		
