@@ -22,10 +22,19 @@
 	
 	<?php
 	
-		$json_extended = new TW_JsonExtended( 'client2' );
+		//$json_extended = new TW_JsonExtended( 'client2' );
 		
-		$json_extended->iterate();
+		//$json_extended->iterateSPL();
+		
+	?>
 	
+	<h2>TW_Form Class Demo</h2>
+	
+	<?php
+	
+		$form = TW_Form::getSingleton();
+		
+		$form->renderForm( 'client2' );
 	?>
 	
 	<?php else : ?>
