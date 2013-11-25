@@ -17,8 +17,8 @@
 				"description" : "the full name of the Client as two seperate variables",
 				
 				"properties" : {
-					"name_first" : { "type" : "string" },
-					"name_last" : { "type" : "string" }
+					"name_first" : { "type" : "string" , "title" : "First Name" },
+					"name_last" : { "type" : "string" , "title" : "Last Name" }
 				}
 			},
 			
@@ -51,12 +51,13 @@
 						"title" : "Grade Schools",
 						"type" : "object",
 						"properties" : {
-							"elementary" : { "type" : "string" },
-							"middle_school" : { "type" : "string" },
-							"high_school" : { "type" : "string" }
+							"elementary" : { "type" : "string" , "title" : "Elementary School" },
+							"middle_school" : { "type" : "string" , "title" : "Middle School"},
+							"high_school" : { "type" : "string" , "title" : "High School" }
 						}
 					},
-					"college" : { "type" : "string" }
+					"college" : { "type" : "string" , "title" : "College" },
+					"post_grad" : { "$ref" : "terminal" , "title" : "Post Graduate" }
 				}
 			},
 			
@@ -96,5 +97,17 @@
 		
 	},
 	
-	"form" : []
+	"form" : [],
+	
+	"test" : {
+		
+		"title" : "Testing",
+		"properties" : {
+			
+			"lookup" : { "type" : "string" },
+			"callback" : { "type" : "string" }
+			
+		}
+		
+	}
 }
