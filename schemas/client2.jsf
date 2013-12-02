@@ -57,7 +57,7 @@
 						}
 					},
 					"college" : { "type" : "string" , "title" : "College" },
-					"post_grad" : { "$ref" : "terminal" , "title" : "Post Graduate" }
+					"post_grad" : { "$ref" : "#/schema/properties/name_full" , "title" : "Post Graduate" }
 				}
 			},
 			

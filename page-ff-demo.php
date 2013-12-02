@@ -18,7 +18,7 @@
 	
 		<p>Congratulations, Form Factory is successfully loaded!</p>
 	
-	<h2>Testing JSON Extended class functions</h2>
+	<!-- <h2>Testing JSON Extended class functions</h2> -->
 	
 	<?php
 	
@@ -28,14 +28,18 @@
 		
 	?>
 	
-	<h2>TW_Form Class Demo</h2>
+	<h2>TW_JsonForma Class Demo</h2>
 	
 	<?php
 	
-		$form = TW_Form::getSingleton();
+		$form = new TW_JsonForma( 'client2' );
+		//var_dump($form->json);
+		$form->render();
 		
-		$form->renderForm( 'client2' );
+		var_dump($form->fields);
+		
 	?>
+	
 	
 	<?php else : ?>
 	
