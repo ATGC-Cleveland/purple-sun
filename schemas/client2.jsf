@@ -97,7 +97,35 @@
 		
 	},
 	
-	"form" : [],
+	"form" : {
+		
+		"tags" : [],
+		"fields" : [
+			{
+				"key" : "bday",
+				"type" : "text",
+				"label" : true
+			},
+			"dob",
+			"dob.dob_month",
+			"name_full.name_first",
+			"address" ,
+			{
+				"key" : "gs_profile.bio_sex",
+				"regroup" : "bio_sex"
+				
+			},
+			"gs_profile" ,
+			"sc_profile" ,
+			"name_full.name_last",
+			"education.grade_school.middle_school",
+			{
+				"key" : "education.post_grad.name_last",
+				"regroup" : "post_grad"
+			},
+			"education"
+		]
+	},
 	
 	"test" : {
 		

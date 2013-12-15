@@ -33,9 +33,10 @@
 	<?php
 	
 		$form = new TW_JsonForma( 'client2' );
-		//var_dump($form->json);
+
 		$form->render();
 		
+		//var_dump($form->json);
 		var_dump($form->fields);
 		
 	?>
